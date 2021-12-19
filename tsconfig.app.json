@@ -1,0 +1,15 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"outDir": "./out-tsc/chat-app",
+		"types": []
+	},
+	"files": [
+		"client/src/main.ts",
+		"client/src/polyfills.ts"
+	],
+	"include": [
+		"client/src/**/*.d.ts"
+	]
+}

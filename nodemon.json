@@ -1,0 +1,14 @@
+{
+	"restratable": "rs",
+	"ext": "ts",
+	"watch": [
+		"server/**/*",
+		"shared/**/*",
+		"server.ts"
+	],
+	"ignore": [
+		".git",
+		"node_modules/**"
+	],
+	"exec": "npm run server"
+}

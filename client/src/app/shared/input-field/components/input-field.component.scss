@@ -1,0 +1,36 @@
+// // @import "src/custom";
+
+.show {
+	opacity: 1 !important;
+}
+
+.hide {
+	opacity: 0 !important;
+}
+// .input-group {
+// 	border-style: solid;
+// 	border-color: $input-border-color;
+// 	border-radius: $input-border-radius;
+// 	border-width: $input-border-width;
+// }
+
+// .input-group > input {
+// 	border-style: none;
+// }
+// .input-group > a > i > {
+// 	padding: 3px;
+// }
+
+.input-post-icon {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 10;
+	cursor: pointer;
+}
+.is-valid {
+	background-image: none;
+}
+.is-invalid {
+	background-image: none;
+}

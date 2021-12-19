@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.editor.enablePreview": false,
+		"typescript.tsdk": "node_modules/typescript/lib",
+		"git.ignoreLimitWarning": true,
+		"todo-tree.tree.showCountsInTree": true,
+		"editor.insertSpaces": false,
+	}
+}

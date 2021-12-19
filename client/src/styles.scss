@@ -1,0 +1,132 @@
+@use "@angular/material" as mat;
+@import "_custom.scss";
+
+// $my-primary: mat.define-palette($primary-custom-palette, 500);
+
+@include mat.core();
+
+$web-ui-primary: mat.define-palette($primary-custom-palette, 300);
+$web-ui-accent: mat.define-palette($accent-custom-palette, 700);
+$web-ui-warn: mat.define-palette(mat.$red-palette);
+
+$subscriptions-web-ui-theme: mat.define-light-theme(
+	(
+		color: (
+			primary: $web-ui-primary,
+			accent: $web-ui-accent,
+			warn: $web-ui-warn,
+		),
+	)
+);
+
+@include mat.all-component-themes($subscriptions-web-ui-theme);
+
+html,
+body {
+	height: 100%;
+	max-width: 100vw;
+}
+body {
+	margin: 0;
+	width: 100vw;
+}
+.input-group > .input-group-prepend > .input-group-text {
+	background-color: transparent;
+	border: 0;
+}
+
+// scroll bar style
+::-webkit-scrollbar-track {
+	width: 5px;
+	background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+	width: 1em;
+	background-color: #ddd;
+	outline: 1px solid slategrey;
+	border-radius: 1rem;
+}
+
+.cdk-overlay-container {
+	z-index: 1050 !important;
+}
+
+.mt-6rem {
+	margin-top: 6rem;
+}
+
+.pointer {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.on-hover {
+	transform: scale(1);
+	transition: 200ms;
+}
+
+.on-hover:hover {
+	transform: scale(1.2);
+	transition: 200ms;
+}
+
+// * hamburger button
+.navbar-light .navbar-toggler {
+	border: 0;
+}
+
+// * Angular Material
+
+mat-dialog-container#modal-component {
+	border: 3px solid #262626;
+	border-radius: 11px;
+	background-color: #1a1a1a;
+}
+
+.mat-progress-bar-fill::after {
+	background-color: black;
+}
+.snack-bar-danger {
+	color: $white;
+	background: $danger;
+}
+.snack-bar-success {
+	color: $white;
+	background: $success;
+}
+.snack-bar-container.snack-bar-info {
+	color: $white;
+	background: $secondary;
+}
+.snack-bar-warn {
+	color: $white;
+	background: $warn;
+}
+
+.mat-button-wrapper {
+	content: "\2716";
+}
+// * navigation loader
+.loading-indicator {
+	opacity: 0;
+	z-index: 1051;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+.loading-indicator-show {
+	opacity: 1;
+}
+.pointer-wait {
+	cursor: wait;
+}
+.no-events {
+	pointer-events: none;
+}
+
+.backdrop-brightness-30 {
+	filter: brightness(0.6);
+	background: rgba(0, 0, 0, 0.6);
+}

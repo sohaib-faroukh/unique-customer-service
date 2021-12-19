@@ -1,0 +1,54 @@
+<header class="header fixed-top header-animated">
+	<nav class="fixed-top navbar navbar-expand-lg navbar-light bg-white  shadow-sm py-3">
+		<div class="container-fluid">
+			<!-- <span class="h4 m-0 text-shadow">Unique Customer Service</span> -->
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav m-auto">
+
+					<li class="nav-item">
+						<a class="nav-link" [routerLink]="['/'+routerMap.chats]" [routerLinkActive]="'active'">
+							Chats
+						</a>
+					</li>
+
+				</ul>
+
+
+				<ul class="navbar-nav">
+					<ng-container *ngIf="!(auth.isLoggedIn$| async);else logoutBtnRef">
+						<li class="nav-item mr-2">
+							<!--  data-target="#quoteForm" data-toggle="modal" -->
+							<a class="btn btn-primary" type="button" [routerLink]="['/'+routerMap.login]">
+								Login
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="btn btn-primary" type="button" [routerLink]="['/'+routerMap.signUp]">
+								Sign up
+							</a>
+						</li>
+					</ng-container>
+					<ng-template #logoutBtnRef>
+						<li class="nav-item dropdown" *ngIf="loggedInAccount$ | async as currentAccount">
+							<a class="nav-link text-capitalize pointer text-shadow" id="profile-drop-down-id" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								{{currentAccount.name}}
+								<i class="fa fa-lg fa-user-circle pl-1 pr-4"></i>
+								<!-- dropdown-toggle -->
+							</a>
+							<div class="dropdown-menu" aria-labelledby="profile-drop-down-id">
+								<a class="dropdown-item" type="button" (click)="onLogout()">
+									Log out
+								</a>
+							</div>
+						</li>
+					</ng-template>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+</header>

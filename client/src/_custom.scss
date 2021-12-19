@@ -1,0 +1,98 @@
+@import "@angular/material/theming";
+/* your styles go here */
+
+$primary: #0cda90;
+$secondary: #6c757d;
+$white: #fff;
+$success: #28a745;
+$danger: #dc3545;
+$warn: #ffc107;
+$info: #17a2b8;
+
+$primary-custom-palette: (
+	50: #e0f9ec,
+	100: #b3efcf,
+	200: #7be4b0,
+	300: $primary,
+	400: #00d074,
+	500: #00c55e,
+	600: #00b553,
+	700: #00a246,
+	800: #00903a,
+	900: #007024,
+	A900: #0cda90,
+	contrast: (
+		50: $dark-primary-text,
+		100: $dark-primary-text,
+		200: $dark-primary-text,
+		300: $light-primary-text,
+		400: $light-primary-text,
+		500: $light-primary-text,
+		600: $light-primary-text,
+		700: $light-primary-text,
+		800: $light-primary-text,
+		900: $light-primary-text,
+		A100: $dark-primary-text,
+		A200: $light-primary-text,
+		A400: $light-primary-text,
+		A700: $light-primary-text,
+	),
+);
+
+$accent-custom-palette: (
+	50: #f2fbff,
+	100: #edf6fd,
+	200: #e6eff6,
+	300: #d8e1e8,
+	400: #b5bec5,
+	500: #969fa6,
+	600: #6e767c,
+	700: #5a6268,
+	800: #3b4349,
+	900: #1b2227,
+	contrast: (
+		50: $dark-secondary-text,
+		100: $dark-secondary-text,
+		200: $dark-secondary-text,
+		300: $light-secondary-text,
+		400: $light-secondary-text,
+		500: $light-secondary-text,
+		600: $light-secondary-text,
+		700: $light-secondary-text,
+		800: $light-secondary-text,
+		900: $light-secondary-text,
+		A100: $dark-secondary-text,
+		A200: $light-secondary-text,
+		A400: $light-secondary-text,
+		A700: $light-secondary-text,
+	),
+);
+
+$warn-custom-palette: (
+	50: #fff8e1,
+	100: #ffecb3,
+	200: #ffe082,
+	300: #ffd54f,
+	400: #ffca28,
+	500: #ffc107,
+	600: #ffb300,
+	700: #ffa000,
+	800: #ff8f00,
+	900: #ff6f00,
+	contrast: (
+		50: $dark-primary-text,
+		100: $dark-primary-text,
+		200: $dark-primary-text,
+		300: $light-primary-text,
+		400: $light-primary-text,
+		500: $light-primary-text,
+		600: $light-primary-text,
+		700: $light-primary-text,
+		800: $light-primary-text,
+		900: $light-primary-text,
+		A100: $dark-primary-text,
+		A200: $light-primary-text,
+		A400: $light-primary-text,
+		A700: $light-primary-text,
+	),
+);

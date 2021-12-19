@@ -1,0 +1,102 @@
+<!-- *  text, number, email, password -->
+
+<ng-container *ngIf="['text','number','email', 'password'].includes(type)">
+	<div class="mb-2">
+		<mat-form-field [appearance]="appearance" class="w-100" [floatLabel]="isFloatLabel">
+			<mat-label *ngIf="isWithLabel && label">{{label || placeholder || ''}}</mat-label>
+			<input matInput [type]="type" [formControl]="control!" [name]="name || 'normal-field'"
+				[placeholder]="placeholder || ''">
+
+			<mat-error *ngIf="isWithErrorMessage && (control?.dirty || control?.touched)  && fieldErrors">
+				&nbsp;{{getErrorMessage()}}
+			</mat-error>
+
+			<ng-container *ngIf="isPassword">
+				<a (click)="togglePassword()" class="h-100 d-flex input-post-icon">
+					<i class="fa fa-eye-slash m-auto fa-lg" *ngIf="type==='password';else hidePasswordIconRef"> </i>
+					<ng-template #hidePasswordIconRef>
+						<i class="fa fa-eye m-auto fa-lg"></i>
+					</ng-template>
+				</a>
+			</ng-container>
+		</mat-form-field>
+
+	</div>
+</ng-container>
+
+
+<!-- * TEXTAREA -->
+
+<ng-container *ngIf="['textarea'].includes(type)">
+	<mat-form-field [appearance]="appearance" [floatLabel]="isFloatLabel" class="w-100">
+		<mat-label *ngIf="isWithLabel && label">{{label || placeholder || ''}}</mat-label>
+		<textarea [rows]="textareaRows" matInput [formControl]="control!" [placeholder]="placeholder || ''"></textarea>
+		<mat-error *ngIf="isWithErrorMessage && (control?.dirty || control?.touched)  && fieldErrors">
+			&nbsp;{{getErrorMessage()}}
+		</mat-error>
+	</mat-form-field>
+</ng-container>
+
+
+
+<!-- * DATE & TIME -->
+
+<ng-container *ngIf="['date','time','datetime'].includes(type)">
+	<mat-form-field [appearance]="appearance" class="w-100" [floatLabel]="isFloatLabel">
+		<mat-label *ngIf="isWithLabel && label">{{label || placeholder || ''}}</mat-label>
+		<input matInput [matDatepicker]="datePickerRef" [formControl]="control!">
+		<mat-datepicker-toggle matSuffix [for]="datePickerRef"></mat-datepicker-toggle>
+		<mat-datepicker #datePickerRef></mat-datepicker>
+		<mat-error *ngIf="isWithErrorMessage && (control?.dirty || control?.touched)  && fieldErrors">
+			&nbsp;{{getErrorMessage()}}
+		</mat-error>
+	</mat-form-field>
+
+</ng-container>
+
+
+
+<!-- * SELECT -->
+
+<ng-container *ngIf="['select'].includes(type)">
+	<mat-form-field [appearance]="appearance" class="w-100" [floatLabel]="isFloatLabel">
+		<mat-label *ngIf="isWithLabel && label">{{label || placeholder || ''}}</mat-label>
+		<mat-select [formControl]="control!" [multiple]="isMultipleSelect">
+			<mat-option *ngIf="!required">none</mat-option>
+			<mat-option *ngFor="let option of selectOptions||[]" [value]="option[selectOptionKey] || option['id']"
+				[disabled]="option['disabled']">
+				<span class="text-capitalize">
+					{{ option[selectOptionTitle] || option[selectOptionKey] || option['id'] }}
+				</span>
+			</mat-option>
+
+		</mat-select>
+
+		<mat-error *ngIf="isWithErrorMessage && (control?.dirty || control?.touched)  && fieldErrors">
+			&nbsp;{{getErrorMessage()}}
+		</mat-error>
+
+	</mat-form-field>
+
+
+</ng-container>
+
+
+<!-- * FILE -->
+<ng-container *ngIf="['file'].includes(type)">
+	<mat-form-field [appearance]="appearance" class="w-100" [floatLabel]="isFloatLabel">
+		<mat-label *ngIf="isWithLabel && label">{{label || placeholder || ''}}</mat-label>
+		<input matInput [readonly]="true" type="text" [formControl]="control!">
+		<button type="button" mat-icon-button matSuffix [attr.aria-label]="'Click to upload'"
+			(click)="fileUploaderInputRef?.click()">
+			<i class="fa fa-2x fa-arrow-circle-up mb-3 text-primary"></i>
+		</button>
+		<mat-error *ngIf="isWithErrorMessage && (control?.dirty || control?.touched)  && fieldErrors">
+			&nbsp;{{getErrorMessage()}}
+		</mat-error>
+	</mat-form-field>
+
+	<input [type]="'file'" [hidden]="true" [readonly]="true" [id]="id || 'file-uploader-input'" #fileUploaderInputRef
+		(change)="onFileUploadChange($event)">
+
+</ng-container>

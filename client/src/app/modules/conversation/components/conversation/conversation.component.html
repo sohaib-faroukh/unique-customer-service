@@ -1,0 +1,62 @@
+<div class="container py-2 px-4" *ngIf="!!id;noSelectedConversationRef">
+
+	<div class="row rounded-lg overflow-hidden shadow border-lg">
+		<!-- Chat Box-->
+		<div class="col-12">
+			<div class="row justify-content-between bg-gray px-4 py-2 bg-light">
+				<p class="h5 mb-0 py-1">{{(conversation$|async)?.topic||''}}</p>
+
+				<button *ngIf="!!id && (auth.loggedInAccount$|async)?.type==='client'" class="btn btn-outline-danger"
+					(click)="onRemoveConversationClick()">
+					Remove <i class="fa fa-trash-o"></i>
+				</button>
+
+			</div>
+			<div class="px-4 py-5 chat-box bg-white" id="chat-box-id" #chatBoxRef>
+
+				<ng-container *ngIf="messages$|async as messages;else loadingRef">
+					<ng-container *ngIf="messages.length>0;noMessagesRef">
+						<ng-container *ngFor="let message of messages;">
+							<app-message [message]="message">
+							</app-message>
+						</ng-container>
+					</ng-container>
+				</ng-container>
+
+			</div>
+
+			<!-- Typing area -->
+			<form (submit)="onSubmit()" class="bg-light mb-3">
+				<div class="input-group">
+					<input type="text" placeholder="Type a message" aria-describedby="button-addon2"
+						class="form-control rounded-0 border-0 py-4 bg-light" [formControl]="messageControl">
+
+					<div class="input-group-append">
+						<button [appLoadingButton]="sending" id="button-addon2" type="submit" class="btn btn-link"> <i
+								class="fa fa-paper-plane"></i></button>
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+
+<ng-template #loadingRef>
+	<div class="row">
+		<app-spinner class="m-autp"></app-spinner>
+	</div>
+</ng-template>
+
+<ng-template #noMessagesRef>
+	<div class="row">
+		<p class="m-auto text-center text-gray-500">No messages in the conversation</p>
+	</div>
+</ng-template>
+
+<ng-template #noSelectedConversationRef>
+	<div class="row">
+		<p class="m-auto text-center text-black-50">No messages in the conversation</p>
+	</div>
+</ng-template>

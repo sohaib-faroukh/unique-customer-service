@@ -1,0 +1,10 @@
+<div [ngClass]="
+{
+	'text-center': !data.align || data?.align==='center', 
+	'text-left': data?.align==='left', 
+	'text-right': data?.align==='right'
+}" class="text-center">
+	<div class="spinner-border" [ngClass]="{'spinner-border-sm': data?.size==='small' }" role="status">
+		<span class="sr-only">Loading...</span>
+	</div>
+</div>

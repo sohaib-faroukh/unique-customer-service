@@ -1,0 +1,63 @@
+{
+	"data": {
+		"accounts": [
+			{
+				"id": "8c396851-344d-4b24-8018-56dfe1b1456c",
+				"email": "agent1@email.com",
+				"name": "Agent 1",
+				"password": "$2b$08$50CMN6del4TIOVzgiwewx.GJ.YqWW8n/OBJFICV0jpumAheoWJAsG",
+				"type": "agent",
+				"status": "active",
+				"createdAt": "2021-12-20 00:58:27 AM",
+				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjhjMzk2ODUxLTM0NGQtNGIyNC04MDE4LTU2ZGZlMWIxNDU2YyIsImVtYWlsIjoiYWdlbnQxQGVtYWlsLmNvbSIsIm5hbWUiOiJBZ2VudCAxIiwicGFzc3dvcmQiOiIkMmIkMDgkNTBDTU42ZGVsNFRJT1Z6Z2l3ZXd4LkdKLllxV1c4bi9PQkpGSUNWMGpwdW1BaGVvV0pBc0ciLCJ0eXBlIjoiYWdlbnQiLCJzdGF0dXMiOiJhY3RpdmUiLCJjcmVhdGVkQXQiOiIyMDIxLTEyLTIwIDAwOjU4OjI3IEFNIiwiaWF0IjoxNjM5OTU0NzA3LCJleHAiOjE2NDg1OTQ3MDcsInN1YiI6InVzZXItdG9rZW4ifQ.n24WcviwsIyvLAvP35ZO_SYzqH4N3_UtOykXqUtKzJE"
+			},
+			{
+				"id": "87002386-4ea7-47a6-ac77-a4f34a78b087",
+				"email": "agent2@email.com",
+				"name": "Agent 2",
+				"password": "$2b$08$G1sLZDhQIa4EidVnev.LOewjGLZWmfkGD3hld1uIpYSPoKBGdAr2S",
+				"type": "agent",
+				"status": "active",
+				"createdAt": "2021-12-20 00:58:27 AM",
+				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3MDAyMzg2LTRlYTctNDdhNi1hYzc3LWE0ZjM0YTc4YjA4NyIsImVtYWlsIjoiYWdlbnQyQGVtYWlsLmNvbSIsIm5hbWUiOiJBZ2VudCAyIiwicGFzc3dvcmQiOiIkMmIkMDgkRzFzTFpEaFFJYTRFaWRWbmV2LkxPZXdqR0xaV21ma0dEM2hsZDF1SXBZU1BvS0JHZEFyMlMiLCJ0eXBlIjoiYWdlbnQiLCJzdGF0dXMiOiJhY3RpdmUiLCJjcmVhdGVkQXQiOiIyMDIxLTEyLTIwIDAwOjU4OjI3IEFNIiwiaWF0IjoxNjM5OTU0NzA3LCJleHAiOjE2NDg1OTQ3MDcsInN1YiI6InVzZXItdG9rZW4ifQ.eZ2bAsXzZOYApjm3dC7iZPj3oMNaFot7C2Lp0zNNzo0"
+			},
+			{
+				"id": "3da28056-ee1f-41a9-8880-2f2273dcce9d",
+				"email": "client1@email.com",
+				"name": "Client 1",
+				"password": "$2b$08$QgIuauk0mfEPgX2J78Gu8unmOeHc/eqd/WHiyWSKIu.RjcBf2/l8u",
+				"type": "client",
+				"status": "active",
+				"createdAt": "2021-12-20 00:58:27 AM",
+				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNkYTI4MDU2LWVlMWYtNDFhOS04ODgwLTJmMjI3M2RjY2U5ZCIsImVtYWlsIjoiY2xpZW50MUBlbWFpbC5jb20iLCJuYW1lIjoiQ2xpZW50IDEiLCJwYXNzd29yZCI6IiQyYiQwOCRRZ0l1YXVrMG1mRVBnWDJKNzhHdTh1bm1PZUhjL2VxZC9XSGl5V1NLSXUuUmpjQmYyL2w4dSIsInR5cGUiOiJjbGllbnQiLCJzdGF0dXMiOiJhY3RpdmUiLCJjcmVhdGVkQXQiOiIyMDIxLTEyLTIwIDAwOjU4OjI3IEFNIiwiaWF0IjoxNjM5OTU0NzA3LCJleHAiOjE2NDg1OTQ3MDcsInN1YiI6InVzZXItdG9rZW4ifQ.e4ZnnaKhm-sJ501W-u-DWp-9cJnunxxJWojfZ1mXNOg"
+			},
+			{
+				"id": "82dc1662-c7f5-48eb-a99b-4c8440fa5520",
+				"email": "client2@email.com",
+				"name": "Client 2",
+				"password": "$2b$08$fp.GOI2Xh1VYHZw4b/nfnOylX1ShE/3oBDW6SaRJaFaA1l7auA9dm",
+				"type": "client",
+				"status": "active",
+				"createdAt": "2021-12-20 00:58:27 AM",
+				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyZGMxNjYyLWM3ZjUtNDhlYi1hOTliLTRjODQ0MGZhNTUyMCIsImVtYWlsIjoiY2xpZW50MkBlbWFpbC5jb20iLCJuYW1lIjoiQ2xpZW50IDIiLCJwYXNzd29yZCI6IiQyYiQwOCRmcC5HT0kyWGgxVllIWnc0Yi9uZm5PeWxYMVNoRS8zb0JEVzZTYVJKYUZhQTFsN2F1QTlkbSIsInR5cGUiOiJjbGllbnQiLCJzdGF0dXMiOiJhY3RpdmUiLCJjcmVhdGVkQXQiOiIyMDIxLTEyLTIwIDAwOjU4OjI3IEFNIiwiaWF0IjoxNjM5OTU0NzA3LCJleHAiOjE2NDg1OTQ3MDcsInN1YiI6InVzZXItdG9rZW4ifQ._9Xo4_0xvoBifcEppZXQwyZFvKd0qJJQsMxYzhbGBng"
+			}
+		],
+		"messages": [],
+		"conversations": [
+			{
+				"topic": "Topic1",
+				"id": "758e46c9-c7de-4175-be32-def92567d851",
+				"client": "client1@email.com",
+				"createdAt": "2021-12-20 01:05:39 AM",
+				"agent": "agent2@email.com"
+			},
+			{
+				"topic": "Topic2",
+				"id": "f34d6f5f-cdaa-4a0a-85a2-c544be6def77",
+				"client": "client1@email.com",
+				"createdAt": "2021-12-20 01:05:45 AM",
+				"agent": "agent1@email.com"
+			}
+		]
+	}
+}

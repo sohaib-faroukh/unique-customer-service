@@ -1,0 +1,46 @@
+<style>
+	.small {
+		font-size: 0.7rem;
+	}
+</style>
+<ng-container *ngIf="!!message">
+	<ng-container *ngIf="(auth.loggedInAccount$|async) as account">
+		<ng-container *ngIf="[account.id,account.email].includes(message.sender);else othersMessageRef">
+
+			<div class="media w-50 ml-auto mb-3 pl-3">
+				<div class="media-body">
+					<div class="bg-primary rounded py-2 px-3 mb-2">
+						<p class="text-small mb-0 text-white">{{message?.content}}</p>
+					</div>
+					<p class="small text-muted">{{message?.clientTime}}</p>
+				</div>
+			</div>
+
+
+
+		</ng-container>
+
+
+
+		<ng-template #othersMessageRef>
+
+			<div class="media w-50 mb-3 pr-3">
+				<img src="assets/images/avatar.svg" [alt]="message.senderName" width="50" height="50" class="rounded-circle">
+				<div class="media-body ml-3">
+					<div class="bg-light rounded py-2 px-3 mb-2">
+						<p class="text-small mb-0 text-muted">{{message?.content}}</p>
+					</div>
+					<!--  sample of day format: '12:00 PM | Aug 13' -->
+					<div class="d-flex justify-content-between px-2 small text-muted">
+						<span class="text-shadow">
+							{{message.senderName}}
+						</span>
+						<span>
+							{{message?.clientTime}}
+						</span>
+					</div>
+				</div>
+			</div>
+
+		</ng-template>
+	</ng-container>

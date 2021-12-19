@@ -1,0 +1,58 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-md-4 container-fluid">
+			<ng-container *ngIf="(auth.loggedInAccount$|async)?.type==='client'">
+				<div class="card border-lg shadow">
+					<div class="card-body">
+						<h5 class="card-title"> Create a new Topic</h5>
+						<form class="row" (submit)="onNewTopicClick()">
+							<app-input-field style="font-size: 0.8rem;" class="ml-2" [label]="'Topic'" [isWithLabel]="true"
+								[placeholder]="'Topic name'" [id]="'topic-name-id'" [formControl]="topicNameControl"></app-input-field>
+							<div class="col-md-6">
+								<button class="pull-right btn btn-primary" type="submit" [disabled]="topicNameControl.invalid">
+									Save
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</ng-container>
+
+			<div class="card mt-2">
+				<div class="card-body border-lg shadow">
+
+					<h5 class="card-title">Topics list</h5>
+					<div id="plist" class="w-100 people-list">
+
+
+						<ul class="list-unstyled chat-list mt-2 mb-0">
+
+							<ng-container *ngFor="let conversation of conversationService.data$|async">
+								<li class="clearfix" (click)="onSelectConversation(conversation)"
+									[ngClass]="  {'selected':selectedConversation && selectedConversation===conversation.id}  ">
+									<img src="assets/images/chat-avatar.png" [alt]="conversation?.topic||''">
+									<div class="about">
+										<div class="name"> {{conversation.topic||''}}</div>
+									</div>
+								</li>
+							</ng-container>
+
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="col-md-8 col-12">
+			<div class="row" *ngIf="selectedConversation">
+				<app-conversation class="w-100" [id]="selectedConversation"></app-conversation>
+			</div>
+		</div>
+	</div>
+
+
+</div>

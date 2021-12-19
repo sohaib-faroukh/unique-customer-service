@@ -1,0 +1,43 @@
+<form [formGroup]="form!" (ngSubmit)="onSubmit()">
+	<div class="container-fluid bg-gray-200 d-flex m-0 p-0" style="min-height: 100vh;height: auto;">
+
+		<div class="row card border m-auto p-3 row shadow-lg bg-primary-light col-12 col-md-6">
+
+
+			<div class="card-body">
+				<div class="row">
+					<h4 class="card-title text-primary-1">{{'Login' | uppercase}}</h4>
+				</div>
+				<div class="row">
+					<p class="text-primary">Login to your account...</p>
+				</div>
+				<div class="row">
+					<app-input-field class="w-100" [placeholder]="'Enter your name'" [isWithLabel]="true" [type]="'text'"
+						[formControl]="getControl('name')" [label]="'Full Name'">
+					</app-input-field>
+				</div>
+
+				<div class="row">
+					<app-input-field class="w-100" [placeholder]="'Enter your email'" [isWithLabel]="true" [type]="'email'"
+						[formControl]="getControl('email')" [label]="'Email'">
+					</app-input-field>
+				</div>
+				<div class="row">
+					<app-input-field class="w-100" [placeholder]="'Enter your password'" [label]="'Password'" [isWithLabel]="true"
+						[type]="'password'" [formControl]="getControl('password')">
+					</app-input-field>
+				</div>
+
+				<div class="row pb-2 justify-content-center">
+					<button [appLoadingButton]="status===4" [disabled]="!form?.valid" class="mb-1 btn btn-secondary"
+						type="submit">Sign up</button>
+				</div>
+				<div class="row pb-2 justify-content-center">
+					Have an account ?&nbsp;&nbsp;<a [routerLink]="['/'+routerMap.login]" class="pointer text-sm">Login</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</form>
