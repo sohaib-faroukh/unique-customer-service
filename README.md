@@ -10,7 +10,7 @@
 3. client can open new topic (aka. conversation) with support agent by providing a topic name, support agent will be selected randomly
 4. client can remove a topic
 5. client/agent can send and receive messages from agent
-6. topics shows in realtime when created on the related client/agent on the chats list screen
+6. topics shows in realtime when created on the related client/agent chats list screen
 
 ## install the dependencies:
 Run `npm install` and please use a reliable VPN if you are in Syria
